@@ -146,7 +146,7 @@ $app->get('/archive/:archiveId/geturl', 'cors', function ($archiveId) use ($app)
             return;
         }
         $time+=3;
-        if($time>60)
+        if($time>600)
         {
             echo json_encode(array("success"=>0));
             return;
