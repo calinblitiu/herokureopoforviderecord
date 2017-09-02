@@ -143,13 +143,13 @@ $app->get('/archive/:archiveId/geturl', 'cors', function ($archiveId) use ($app)
         sleep(3);
         if ($archive->status == 'available'){
             echo json_encode(array("success"=>1,'url'=>$archive->url));
-            exit();
+            return;
         }
         $time+=3;
         if($time>60)
         {
             echo json_encode(array("success"=>0));
-            exit();
+            return;
         }
     }
 
