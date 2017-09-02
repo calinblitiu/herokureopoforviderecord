@@ -200,4 +200,8 @@ $app->post('/session/clear', 'cors', function() use ($app) {
     }
 });
 
+$app->get('/delete/:archiveId','cors',function ($archiveId) use ($app){
+    $app->opentok->deleteArchive($archiveId);
+});
+
 $app->run();
