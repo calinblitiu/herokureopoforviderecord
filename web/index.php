@@ -142,7 +142,7 @@ $app->get('/archive/:archiveId/geturl', 'cors', function ($archiveId) use ($app)
     {
         sleep(3);
         if ($archive->status == 'available'){
-            echo json_encode(array("success"=>1,'url'=>$archive->url));
+            echo json_encode(array("success"=>1,'url'=>$archive->url),JSON_UNESCAPED_SLASHES);
             return;
         }
         $time+=3;
