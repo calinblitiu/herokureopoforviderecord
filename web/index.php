@@ -137,12 +137,7 @@ $app->get('/archive/:archiveId/view', 'cors', function ($archiveId) use ($app) {
 
 $app->get('/archive/:archiveId/geturl', 'cors', function ($archiveId) use ($app) {
     $archive = $app->opentok->getArchive($archiveId);
-    if ($archive->status=='available') {
-       echo json_encode(array('url'=>$archive->url));
-    }
-    else {
-        echo json_encode(array('url'=>"1"));
-    }
+    echo json_encode(array('url'=>$archive->url));
 });
 
 /**
